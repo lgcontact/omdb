@@ -1,0 +1,4 @@
+Hi -- I'm seeking some help with this code. Its the first stage of a Python for Everyone data visualisation project.
+I can't work out why the loop stops working during the SQL commands at the end.
+I've tested it segment by segment and the loop works fine if you comment out lines 89-90.
+Any advice will be most gratefully received!
