@@ -87,7 +87,7 @@ for row in fh:
     
     #the loop works until here -- with the following lines, it goes through once then stops...
 
-    #cur.execute('''INSERT INTO Omdbdump (title, year, rated, released, runtime, genre, director, writer, actors, plotlong, language, country, awards, poster, imdbrating, rtrating, mcrating, imdbid, type, dvd, boxoffice, production, website) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )''', (title, year, rated, released, runtime, genre, director, writer, actors, plotlong, language, country, awards, poster, imdbrating, rtrating, mcrating, imdbid, type, dvd, boxoffice, production, website) )
-    #conn.commit()
+    cur.execute('''INSERT INTO Omdbdump (title, year, rated, released, runtime, genre, director, writer, actors, plotlong, language, country, awards, poster, imdbrating, rtrating, mcrating, imdbid, type, dvd, boxoffice, production, website) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )''', (title, year, rated, released, runtime, genre, director, writer, actors, plotlong, language, country, awards, poster, imdbrating, rtrating, mcrating, imdbid, type, dvd, boxoffice, production, website) )
+    conn.commit()
 
 print("Done")
