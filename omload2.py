@@ -21,10 +21,10 @@ ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
-cur.execute('''SELECT id, title, year FROM top50''')
+fh = cur.execute('''SELECT id, title, year FROM top50''')
 
 rty = list()
-for row in cur:
+for row in fh:
     #row = cur.fetchone()
     qtitle = str(row[1])
     qyear = str(row[2])
@@ -87,7 +87,7 @@ for row in cur:
     
     #the loop works until here -- with the following lines, it goes through once then stops...
 
-    cur.execute('''INSERT INTO Omdbdump (title, year, rated, released, runtime, genre, director, writer, actors, plotlong, language, country, awards, poster, imdbrating, rtrating, mcrating, imdbid, type, dvd, boxoffice, production, website) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )''', (title, year, rated, released, runtime, genre, director, writer, actors, plotlong, language, country, awards, poster, imdbrating, rtrating, mcrating, imdbid, type, dvd, boxoffice, production, website) )
-    conn.commit()
+    #cur.execute('''INSERT INTO Omdbdump (title, year, rated, released, runtime, genre, director, writer, actors, plotlong, language, country, awards, poster, imdbrating, rtrating, mcrating, imdbid, type, dvd, boxoffice, production, website) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )''', (title, year, rated, released, runtime, genre, director, writer, actors, plotlong, language, country, awards, poster, imdbrating, rtrating, mcrating, imdbid, type, dvd, boxoffice, production, website) )
+    #conn.commit()
 
 print("Done")
