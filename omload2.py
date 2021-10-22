@@ -21,10 +21,11 @@ ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
-fh = cur.execute('''SELECT id, title, year FROM top50''')
+cur.execute('''SELECT id, title, year FROM top50''')
 
 rty = list()
 for row in cur:
+    #row = cur.fetchone()
     qtitle = str(row[1])
     qyear = str(row[2])
 
